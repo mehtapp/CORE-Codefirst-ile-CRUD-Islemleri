@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CoreWebProject.Models.Mekanlar>
+
+<div class="container" style=margin-top:100px>
+    <p>
+    <a class="btn buttonColor" asp-action="Create">Mekan Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mekan
+            </th>
+            <th>
+               İl
+            </th>
+            <th>
+                İlçe 
+            </th>
+            <th>Açık Adres</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MekanAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Il)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ilce)
+            </td>
+            <td>@Html.DisplayFor(modelItem=> item.AcikAdres)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MekanId" class="btn buttonColor">Güncelle</a> 
+                <a asp-action="Delete" asp-route-id="@item.MekanId" class="btn buttonColor">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+</div>

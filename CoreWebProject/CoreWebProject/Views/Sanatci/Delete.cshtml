@@ -1,0 +1,37 @@
+﻿@model CoreWebProject.Models.Sanatcilar
+
+<div class="container" style=margin-top:100px>
+    
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Sanatçılar</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Sanatçı
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SanatciAd)
+        </dd>
+        <dt class = "col-sm-2">
+            Cinsiyet
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SanatciCinsiyet)
+        </dd>
+        <dt class = "col-sm-2">
+            Yaş
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Yas)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="SanatciId" />
+        <input type="submit" value="Sil" class="btn btn-primary" />
+        <a asp-action="Index">Geri Dön</a>
+    </form>
+</div>
+
+</div>

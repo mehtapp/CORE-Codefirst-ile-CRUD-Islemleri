@@ -1,0 +1,41 @@
+﻿@model CoreWebProject.Models.Mekanlar
+
+<div class="container" style="margin-top:100px">
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Mekanlar</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Mekan
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MekanAdi)
+        </dd>
+        <dt class = "col-sm-2">
+            İl
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Il)
+        </dd>
+        <dt class = "col-sm-2">
+            İlçe
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ilce)
+        </dd>
+        <dt class = "col-sm-2">
+            Açık Adres
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AcikAdres)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MekanId" />
+        <input type="submit" value="Sil" class="btn btn-primary" /> |
+        <a asp-action="Index">Geri Dön</a>
+    </form>
+</div>
+</div>
